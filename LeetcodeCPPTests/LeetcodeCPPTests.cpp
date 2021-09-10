@@ -44,12 +44,6 @@ namespace LeetcodeCPPTests
 		Solution_xnhhkv sol;
 		vector<vector<int>> matrix_odd = { {1, 2, 3},{4, 5, 6},{7, 8, 9} };
 		vector<vector<int>> matrix_even = { {1,2,3,4}, {5,6,7,8}, {9,10,11,12}, {13,14,15,16} };
-
-		TEST_METHOD(TestRotateOneLayer)
-		{
-
-		}
-
 		TEST_METHOD(TestTranslateToTheRight) {
 			pair<int, int> before = pair<int, int>(0, 0);
 			pair<int, int> offset = pair<int, int>(0, 2);

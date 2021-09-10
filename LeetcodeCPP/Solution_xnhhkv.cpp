@@ -58,7 +58,7 @@ void Solution_xnhhkv::rotate_one_layer_odd(vector<vector<int>>& matrix, int laye
 		pair<int, int> current_position = translate(starting_point, pair<int, int>(0, y_offset));
 	    int temp = matrix[current_position.first][current_position.second];
 		for (int j = 0; j < 3; j++) {
-			pair<int, int> next_position = translate(rotate_90_anticlockwise(current_position), pair<int, int>(side_length, 0));
+			pair<int, int> next_position = translate(rotate_90_anticlockwise(current_position), pair<int, int>(matrix.size() - 1, 0));
 			matrix[current_position.first][current_position.second] = matrix[next_position.first][next_position.second];
 			current_position = next_position;
 		}
@@ -75,7 +75,7 @@ void Solution_xnhhkv::rotate_one_layer_even(vector<vector<int>>& matrix, int lay
 		pair<int, int> current_position = translate(starting_point, pair<int, int>(0, y_offset));
 		int temp = matrix[current_position.first][current_position.second];
 		for (int j = 0; j < 3; j++) {
-			pair<int, int> next_position = translate(rotate_90_anticlockwise(current_position), pair<int, int>(side_length, 0));
+			pair<int, int> next_position = translate(rotate_90_anticlockwise(current_position), pair<int, int>(matrix.size() - 1, 0));
 			matrix[current_position.first][current_position.second] = matrix[next_position.first][next_position.second];
 			current_position = next_position;
 		}

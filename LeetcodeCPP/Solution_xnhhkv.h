@@ -1,3 +1,5 @@
+#ifndef SOL_XNHHKV_H
+#define SOL_XNHHKV_H
 #include <vector>
 
 using namespace std;
@@ -20,3 +22,5 @@ private:
     void rotate_one_layer_even(vector<vector<int>>& matrix, int layer_number);
 };
 
+
+#endif // !SOL_XNHHKV_H

@@ -18,12 +18,18 @@
     <ClInclude Include="Solution_xnhhkv.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Solution_xnhbqj.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Solution_xnhhkv.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_xnhbqj.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

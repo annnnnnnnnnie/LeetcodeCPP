@@ -139,9 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Solution_xnhbqj.h" />
     <ClInclude Include="Solution_xnhhkv.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Solution_xnhbqj.cpp" />
     <ClCompile Include="Solution_xnhhkv.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>

@@ -2,6 +2,7 @@
 #include "CppUnitTest.h"
 
 #include "../LeetcodeCPP/Solution_xnhhkv.cpp"
+#include "../LeetcodeCPP/Solution_xnhbqj.cpp"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -32,13 +33,21 @@ namespace Microsoft {
 				return result;
 			}
 
+			template<>
+			static std::wstring ToString<vector<char>>(const vector<char>& ls) {
+				wstring result = L"[";
+					for (char c : ls) {
+						result += to_wstring(c) + L", ";
+					}
+				return result;
+			}
 		}
 	}
 }
 
 namespace LeetcodeCPPTests
 {
-	TEST_CLASS(LeetcodeCPPTests)
+	TEST_CLASS(TestSolution_xnhhkv)
 	{
 	public:
 		Solution_xnhhkv sol;
@@ -108,6 +117,49 @@ namespace LeetcodeCPPTests
 			vector<vector<int>> answer = { {7,4,1},{8,5,2},{9,6,3} };
 
 			Assert::AreEqual<vector<vector<int>>>(answer, matrix_odd);
+		}
+	};
+
+	TEST_CLASS(TestSolution_xnhbqj)
+	{
+	public:
+		Solution_xnhbqj sol;
+		TEST_METHOD(TestSwap) {
+			char c1 = 'a';
+			char c2 = 'b';
+			sol.swap(c1, c2);
+			Assert::AreEqual('b', c1);
+			Assert::AreEqual('a', c2);
+		}
+
+		TEST_METHOD(TestSwapVectorElems) {
+			vector<char> cs = { 'a','b','c','d' };
+			sol.swap(cs[0], cs[3]);
+			Assert::AreEqual('d', cs[0]);
+			Assert::AreEqual('a', cs[3]);
+		}
+
+		TEST_METHOD(TestReverseShort) {
+			vector<char> cs = { 'a','b','c' };
+			sol.reverseString(cs);
+			vector<char> answer = { 'c','b','a' };
+			Assert::AreEqual<vector<char>>(answer, cs);
+		}
+
+		TEST_METHOD(TestReverseLong) {
+			vector<char> cs;
+			for (char c = 'a'; c < 'z'; c++) {
+				cs.push_back(c);
+			}
+
+			sol.reverseString(cs);
+
+			vector<char> answer;
+			for (char c = 'z' - 1; c >= 'a'; c--) {
+				answer.push_back(c);
+			}
+
+			Assert::AreEqual<vector<char>>(answer, cs);
 		}
 	};
 }

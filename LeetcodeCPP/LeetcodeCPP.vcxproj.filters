@@ -21,6 +21,9 @@
     <ClInclude Include="Solution_xnhbqj.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Solution_xn5z8r.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Solution_xnhhkv.cpp">
@@ -30,6 +33,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Solution_xnhbqj.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_xn5z8r.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

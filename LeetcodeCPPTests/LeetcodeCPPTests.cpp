@@ -3,6 +3,7 @@
 
 #include "../LeetcodeCPP/Solution_xnhhkv.cpp"
 #include "../LeetcodeCPP/Solution_xnhbqj.cpp"
+#include "../LeetcodeCPP/Solution_xn5z8r.cpp"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -160,6 +161,38 @@ namespace LeetcodeCPPTests
 			}
 
 			Assert::AreEqual<vector<char>>(answer, cs);
+		}
+	};
+
+	TEST_CLASS(TestSolution_xn5z8r) {
+	public:
+		Solution_xn5z8r sol;
+		TEST_METHOD(TestSimpleString) {
+			std::string s = "leetcode";
+			int result = sol.firstUniqChar(s);
+			int answer = 0;
+			Assert::AreEqual(answer, result);
+		}
+
+		TEST_METHOD(TestSimpleStringAnswerInTheMiddle) {
+			std::string s = "leetcodel";
+			int result = sol.firstUniqChar(s);
+			int answer = 3;
+			Assert::AreEqual(answer, result);
+		}
+
+		TEST_METHOD(TestSimpleNegative) {
+			std::string s = "eeee";
+			int result = sol.firstUniqChar(s);
+			int answer = -1;
+			Assert::AreEqual(answer, result);
+		}
+
+		TEST_METHOD(TestBadInput) {
+			std::string s = "";
+			int result = sol.firstUniqChar(s);
+			int answer = -1;
+			Assert::AreEqual(answer, result);
 		}
 	};
 }

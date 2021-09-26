@@ -7,5 +7,9 @@
 #include<iostream>
 
 int main() {
+	int c = -1;
+	std::cout << std::hex << c << std::endl;
+	c >>= 1;
+	std::cout << std::hex << c << std::endl;
 	return 0;
 }

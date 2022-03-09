@@ -27,6 +27,9 @@
     <ClInclude Include="Solution_no371.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Solution_no798.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Solution_xnhhkv.cpp">

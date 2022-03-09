@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Solution_no798.h" />
     <ClInclude Include="Solution_no371.h" />
     <ClInclude Include="Solution_xn5z8r.h" />
     <ClInclude Include="Solution_xnhbqj.h" />

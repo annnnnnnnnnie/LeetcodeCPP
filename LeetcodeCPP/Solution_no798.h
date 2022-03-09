@@ -1,10 +1,14 @@
 #ifndef SOL_NO798_H
 #define SOL_NO798_H
 
-#include<vector>
-#include<iostream>
+#include <vector>
+#include <numeric>
+#include <iostream>
 using namespace std;
 
+/***
+ * https://leetcode-cn.com/problems/smallest-rotation-with-highest-score/
+**/
 class Solution_no798
 {
 public:
@@ -13,14 +17,20 @@ public:
     }
 
     int bestRotationMatrix(vector<int>& nums) {
+        int n = nums.size();
+        int max_score = 0;
+        int best_k = 0;
+
         vector<vector<int>> matrix = generateScoreMatrix(nums);
-        for (auto row : matrix) {
-            for (auto num : row) {
-                cout << num << " ";
+
+        for (int i = 0; i < n; i++) {
+            int current_score = scoreArrayFromMatrix(matrix, i);
+            if (current_score > max_score) {
+                max_score = current_score;
+                best_k = i;
             }
-            cout << endl;
         }
-        return 0;
+        return best_k;
     }
 
     int bestRotationDirect(vector<int>& nums) {
@@ -50,8 +60,10 @@ public:
         return score;
     }
 
-    int scoreArrayFromMatrix(vector<vector<int>>& scoreMatrix) {
-        return 0;
+    int scoreArrayFromMatrix(vector<vector<int>>& scoreMatrix, int start) {
+        vector<int>& row = scoreMatrix[start];
+        int score = accumulate(row.begin(), row.end(), 0);
+        return score;
     }
 
     // Generate a matrix that represents the score each element might get
@@ -65,14 +77,18 @@ public:
         return matrix;
     }
 
+    int mod(int i, int n) {
+        return ((i % n) + n) % n;
+    }
+
     // precondition: matrix is initialized with zero. 
     // precondition: 0 <= num < k.
     void fillInMatrixColumn(vector<vector<int>>& matrix, int col_number, int num) {
         int n = matrix.size();
-        int row_begin = (col_number - num - n) % n;
-        int row_end = col_number;
-        for (int i = row_begin; (i - 1) % n != row_end; i = (i++) % n) {
-            matrix[i][col_number] = 1;
+        int row_begin = col_number + 1;
+        int cnt = n - num;
+        for (int i = 0; i < cnt; i++) {
+            matrix[(row_begin + i) % n][col_number] = 1;
         }
     }
 };
